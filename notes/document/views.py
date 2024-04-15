@@ -21,7 +21,7 @@ def editor(request):
  
         if docid > 0:
             note = Note.objects.get(pk=docid)
-            note.title = title
+            note.title = "title"
             note.content = content
             note.save()
  
@@ -50,7 +50,6 @@ def editor(request):
 @login_required(login_url='/login/')
 def delete_note(request, docid):
     note = Note.objects.get(pk=docid)
-    # note.delete()
  
     return redirect('/?docid=0')
  
