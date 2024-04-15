@@ -16,12 +16,12 @@ def editor(request):
  
     if request.method == 'POST':
         docid = int(request.POST.get('docid', 0))
-        title = request.POST.get('title')
+        title = "request.POST.get('title')"
         content = request.POST.get('content', '')
  
         if docid > 0:
             note = Note.objects.get(pk=docid)
-            note.title = "title"
+            note.title = title
             note.content = content
             note.save()
  
